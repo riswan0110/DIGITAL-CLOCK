@@ -1,0 +1,71 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+
+    background: #F5F5DC;
+    /* CHANGE HERE - page background colour */
+
+    font-family: Arial, sans-serif;
+}
+
+.clock {
+    text-align: center;
+
+    background: #222222;
+    /* CHANGE HERE - clock box colour */
+
+    color: #FFFFFF;
+    /* CHANGE HERE - text colour */
+
+    padding: 40px;
+    border-radius: 20px;
+
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+.clock h1 {
+    font-size: 25px;
+    margin-bottom: 20px;
+}
+
+#time {
+    font-size: 55px;
+    font-weight: bold;
+
+    color: #D2B48C;
+    /* CHANGE HERE - time colour */
+     /* BLINK EVERY SECOND */
+    animation: clockBlink 1s ease-in-out infinite;
+}
+
+
+/* BLINKING EFFECT */
+
+@keyframes clockBlink {
+
+    0% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 0.4;
+        transform: scale(1.03);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+
+#date {
+    margin-top: 15px;
+    font-size: 20px;
+
+    color: #fa0808;
+    /* CHANGE HERE - date colour */
+}
