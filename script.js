@@ -1,3 +1,12 @@
+// ===== BEEP SOUND =====
+
+const beep = new Audio(
+    "data:audio/wav;base64,UklGRlQAAABXQVZFZm10IBAAAAABAAEAQB8AAEAfAAABAAgAZGF0YRAAAAAA/////wAAAP///wAAAP///wAAAP///w=="
+);
+
+
+// ===== UPDATE CLOCK =====
+
 function updateClock() {
 
     const now = new Date();
@@ -28,9 +37,17 @@ function updateClock() {
 
     document.getElementById("date").textContent =
         now.toLocaleDateString("en-IN", options);
+
+
+    // ===== BEEP EVERY SECOND =====
+    beep.currentTime = 0;
+    beep.play().catch(() => {});
 }
 
 
+// Start clock
 updateClock();
 
+
+// Update every 1 second
 setInterval(updateClock, 1000);
